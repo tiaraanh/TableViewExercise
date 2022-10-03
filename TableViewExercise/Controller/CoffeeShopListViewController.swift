@@ -91,21 +91,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-    /*
-    // to check
-    func isFavorite(_ index: Int) -> Bool {
-       return favoritedCoffeeShops.contains(where: { item in
-            return item == index })
-    }
-    
-         if the closure only 1 line
-         $0 refer to item position in array
-         item is iteration from array of in checking
-         logic is value element equals to index
-    return favoritedCoffeeShops.contains(where: {
-        $0 == index })
-}
-    */
     
     func toogleFavorite(_ index: Int) {
         if coffeeshops[index].isFavorite {
@@ -113,33 +98,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         } else {
             coffeeshops[index].isFavorite = true
         }
-        
-        // needs to remove
-        
-//        let idx = favoritedCoffeeShops.firstIndex(where: { item in
-//            return item == index
-//        })
-//        if idx != nil {
-//            favoritedCoffeeShops.remove(at: idx!)
-        
-//        if let idx = favoritedCoffeeShops.firstIndex(where: { item in return item == index }) {
-//            favoritedCoffeeShops.remove(at: idx)
-//
-//        } else {
-//            favoritedCoffeeShops.append(index)
-//        }
-        
-        
-        // remove element that has same value as index
-//        if favoritedCoffeeShops.contains(where: { ind in
-//            return ind == index }) {
-//            favoritedCoffeeShops.removeAll { item in
-//                return item == index
-//            }
-//        }
-//        else {
-//            favoritedCoffeeShops.append(index)
-//        }
         
         
         //tableView.reloadData()
@@ -176,23 +134,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
     }
     // SLIDE
     
-    // will limit edit cell
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-    
-    
-    // will called when we edit a cell
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        switch editingStyle {
-//        case .delete:
-//            delete(at: indexPath)
-//        default:
-//            break
-
-//        }
-//
-//    }
     // func for delete
     func delete(at indexPath: IndexPath) {
         coffeeshops.remove(at: indexPath.row)
@@ -255,12 +196,8 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         // to hide/unhide the mark
         self.coffeeshops[indexPath.row].isFavorite = (self.coffeeshops[indexPath.row].isFavorite) ? false : true
         
-        // change the mark
-//        cells.accessoryType = (self.coffeeshops[indexPath.row]).isFavorite ? .checkmark : .none
-//        cells.favoriteImageView = (self.coffeeshops[indexPath.row].isFavorite) ? false : true
         
     }
-    
     
     
     // func swipe from left
@@ -276,11 +213,9 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
           
         
         let actions = UISwipeActionsConfiguration(actions: [favorite])
+        actions.performsFirstActionWithFullSwipe = true
         return actions
     }
-    
-    
-    
     
     
 }
