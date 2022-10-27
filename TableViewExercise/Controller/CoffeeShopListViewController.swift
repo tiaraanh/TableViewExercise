@@ -13,7 +13,7 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
     
     
     var coffeeshops: [Coffeeshop] = [
-        Coffeeshop(name: "Boja Eatery", type: "Coffeeshop / Cafe", location: "Jl. Pungkur", image: nil, isFavorite: false),
+        Coffeeshop(name: "Boja Eatery", type: "Coffeeshop / Cafe", location: "Jl. Pungkur", image: "bojaeatery", isFavorite: false),
         
         Coffeeshop(name: "Brewery Coffee", type: "Tea House", location: "Jl. Buahbatu", image: "brewery", isFavorite: false),
         
